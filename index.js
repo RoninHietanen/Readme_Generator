@@ -2,8 +2,6 @@ const inquirer = require('inquirer');
 
 const fs = require('fs');
 
-const markdown = require('./utils/generateMarkdown')
-
 inquirer
   .prompt([
     {
@@ -92,20 +90,62 @@ inquirer
         name: 'licencelink'
     },
   ])
-  .then((data) => {
-    const htmlPageContent = generateHTML(data);
-    fs.writeFile('README.md', htmlPageContent, (err) =>
+  .then((answers) => {
+    const mdPageContent = generateMarkdown(answers);
+
+    fs.writeFile('README.md', mdPageContent, (err) =>
       err ? console.log(err) : console.log('Successfully created README.md!')
     );
   });
 
-function init() {
-    markdown.generateMarkdown(data);
-}
+const generateMarkdown = (answers) =>
+`# ${answers.webname}
+  
+## Description
+md
+${answers.discription}
 
-init();
+
+## User Story 
+
+md
+As A ${answers.asA} 
+I WANT ${answers.iWant}
+SO THAT I ${answers.soThatI}
 
 
+## Acceptance Criteria 
+
+md
+${answers.acceptance}
+
+
+## Mock up
+
+The following ${answers.whatis} shows the web application's appearance and functionality:
+
+![${answers.webname}](./assests/images/${answers.giforpic})
+
+You can view the deployed webpage at this link. [${answers.webname}](${answers.livelink}).
+
+## Key Technologies Used
+
+**${answers.first}**
+
+${answers.firstdiscription}
+
+**${answers.second}**
+
+${answers.seconddiscription}
+
+**${answers.third}**
+
+${answers.thirddiscription}
+
+#Llicences
+
+**${answers.licence}**
+**${answers.licencelink}**`;
 /* {
     type: 'input',
     message: 'Please enter .',
