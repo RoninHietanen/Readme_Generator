@@ -1,9 +1,8 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input
+const markdown = require('./utils/generateMarkdown')
 
 inquirer
   .prompt([
@@ -82,25 +81,33 @@ inquirer
         message: 'Please enter the discription of the third ket technology used.',
         name: 'thirddiscription'
     },
+    {
+        type: 'input',
+        message: 'If this project falls under any licenses please enter them below -- if there is none please state so.',
+        name: 'licence'
+    },
+    {
+        type: 'input',
+        message: 'If this project falls under any licenses please enter the links for them below -- if there is none please leave it empty.',
+        name: 'licencelink'
+    },
   ])
   .then((data) => {
     const htmlPageContent = generateHTML(data);
-    // TODO: Create a function to write README file
     fs.writeFile('README.md', htmlPageContent, (err) =>
       err ? console.log(err) : console.log('Successfully created README.md!')
     );
   });
 
-// TODO: Create a function to initialize app
-function init() {}
+function init() {
+    markdown.generateMarkdown(data);
+}
 
-// Function call to initialize app
 init();
 
 
-
-
-
-
-
-  
+/* {
+    type: 'input',
+    message: 'Please enter .',
+    name: ' '
+}, */
