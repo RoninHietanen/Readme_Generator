@@ -102,13 +102,11 @@ const generateMarkdown = (answers) =>
 `# ${answers.webname}
   
 ## Description
-md
 ${answers.discription}
 
 
 ## User Story 
 
-md
 As A ${answers.asA} 
 I WANT ${answers.iWant}
 SO THAT I ${answers.soThatI}
@@ -116,7 +114,6 @@ SO THAT I ${answers.soThatI}
 
 ## Acceptance Criteria 
 
-md
 ${answers.acceptance}
 
 
@@ -142,7 +139,7 @@ ${answers.seconddiscription}
 
 ${answers.thirddiscription}
 
-#Llicences
+## Licences
 
 **${answers.licence}**
 **${answers.licencelink}**`;
