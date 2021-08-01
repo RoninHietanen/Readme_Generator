@@ -1,7 +1,7 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Description ```md The README.md Generator allows the user to create a simple readme via the terminal on their computer. ```",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,5 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^6.5.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoninHietanen/Readme_Generator.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/RoninHietanen/Readme_Generator/issues"
+  },
+  "homepage": "https://github.com/RoninHietanen/Readme_Generator#readme"
 }
