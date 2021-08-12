@@ -34,7 +34,7 @@ file will be generated with that information in the Readme_Generator file which 
 
 *The following video is a visual representation of how to install and use the README.md Generator:*
 
-![Installation video](./assets/Howtoinstall-1.mp4)
+[How to install](https://youtu.be/bo5IlXkHx5g).
 
 ## Key Technologies Used
 
